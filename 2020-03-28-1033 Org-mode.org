@@ -1,0 +1,253 @@
+#+TITLE: Non-programming applications in EMACS: Org-mode and Friends
+#+Author: Noorah Alhasan
+#+DATE: \today
+#+latex_header: \usepackage[style=apa,natbib=true,hyperref=true,backref=true,maxcitenames=3,url=true,backend=biber,doi=true,isbn=false,eprint=false]{biblatex}
+#+latex_header: \addbibresource{C:/Users/Noorah/Dropbox/Dissertation/library.bib}
+#+LATEX_HEADER: \definecolor{burntorange}{RGB}{191, 87, 0}
+#+LATEX_HEADER: \definecolor{orange}{RGB}{248, 151, 31}
+#+LATEX_HEADER: \definecolor{grey}{RGB}{51, 63, 72}
+#+LATEX_HEADER: \usepackage{amsmath,amsfonts,amssymb,amsthm,enumerate,multirow,array,graphicx,lscape,lastpage,mathabx}
+#+LATEX_HEADER: \usetheme{CambridgeUS}
+#+LATEX_HEADER: \usepackage{fontawesome}
+#+LATEX_HEADER: \usefonttheme{professionalfonts}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{calc}
+#+LATEX_HEADER: \usepackage{subfig}
+# #+LATEX_HEADER: \setbeamercolor{title}{fg=black}
+# #+LATEX_HEADER: \setbeamercolor{structure}{fg=burntorange}
+# #+LATEX_HEADER: \setbeamercolor{section in head/foot}{fg=white, bg=orange}
+# #+LATEX_HEADER: \setbeamercolor{title in head/foot}{fg=white, bg=burntorange}
+# #+LATEX_HEADER: \setbeamercolor{date in head/foot}{fg=grey}
+# #+LATEX_HEADER: \setbeamertemplate{frametitle}{%
+# #+LATEX_HEADER: \nointerlineskip%
+# #+LATEX_HEADER: \begin{beamercolorbox}[wd=\paperwidth,ht=6.0ex,dp=0.6ex]{frametitle}
+# #+LATEX_HEADER: \hspace*{2.5ex}\insertframetitle%
+# #+LATEX_HEADER: \end{beamercolorbox}%
+# #+LATEX_HEADER: }
+#+LATEX_HEADER: \setbeamertemplate{footline}
+#+LATEX_HEADER: {
+#+LATEX_HEADER: \leavevmode%
+#+LATEX_HEADER: \hbox{%
+#+LATEX_HEADER: \begin{beamercolorbox}[wd=.75\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+#+LATEX_HEADER:\usebeamerfont{author in head/foot}\inserttitle
+#+LATEX_HEADER:\end{beamercolorbox}%
+#+LATEX_HEADER: %\begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+#+LATEX_HEADER: %\usebeamerfont{title in head/foot}\insertsection
+#+LATEX_HEADER: %\end{beamercolorbox}%
+#+LATEX_HEADER: \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+#+LATEX_HEADER: \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+#+LATEX_HEADER:  \end{beamercolorbox}}%
+#+LATEX_HEADER:  \vskip0pt%
+#+LATEX_HEADER: }
+#+LATEX_HEADER: \subtitle{EMACS SF}
+#+LATEX_HEADER: \author{Noorah Alhasan}
+# #+LATEX_HEADER: \institute[UT Austin]{LBJ School of Public Affairs \\ The University of Texas at Austin}
+# #+LATEX_HEADER: \usebackgroundtemplate{\includegraphics[width=\paperwidth]{background.png}}
+#+LATEX_HEADER: \setbeamersize{text margin right=7mm}
+#+LATEX_HEADER: \setbeameroption{show notes}
+#+LATEX_HEADER: \titlegraphic{\includegraphics[width=0.2\textwidth,height=.25\textheight]{org-mode-unicorn-logo.png}}
+#+OPTIONS: num:nil toc:nil todo:t
+#+REVEAL_TRANS: Slide
+#+REVEAL_INIT_OPTIONS: width:"100%", height:"100%", margin: 0.1, minScale:1, maxScale:1, slideNumber:true
+#+REVEAL_THEME: Serif
+#+REVEAL_TITLE_SLIDE: <img src="org-mode-unicorn-logo.png" alt="org-mode" class="center" width="160"> <h2 class="title"> %t </h2> <h4 class="author"> %a </h4> <h4 class="email"> %e </h4> <h6 class="date"> %d </h6><br><p><font size="4"> Created with Org-mode and Ox-reveal (Reveal.js) </font></p> 
+#+EMAIL: alhasan.noorah@gmail.com
+#+BIND: org-beamer-frame-default-options "allowframebreaks"
+
+
+* Introduction
+#+ATTR_HTML: :style font-size:30px
+What is Org-mode?
+#+begin_quote
+Org mode is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system. --- [[https://orgmode.org/][Carsten Dominik]]
+#+end_quote
+#+ATTR_HTML: :style font-size:30px
+Org-mode is maintained by [[https://orgmode.org/org.html#History-and-Acknowledgments][thousands]] of contributors, and has produced many packages that are built on top of it.
+* Org-mode modules
+
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:org-mode.png]]
+
+
+
+* Org-mode
+:PROPERTIES:
+:#+REVEAL: split:t
+:END:
+#+ATTR_HTML: :style font-size:30px
+I use org files to conduct most of my literate programming and create documents that are exportable into other formats such as ~.tex~, ~.docx~, ~.html~, and many more. For example, this presentation was created in an org file, and I used LaTeX's beamer class to export it into PDF.
+
+#+ATTR_HTML: :width 600
+#+ATTR_LATEX: :width 0.65\textwidth
+[[file:c:/Users/Noorah/Dropbox/emacs projects/2020-03-28-1033 Org-mode.org_20200329_164548_clXDXk.png]]
+
+* Org-agenda
+\small
+#+ATTR_HTML: :style font-size:30px
+- Populates all your ~TODO~ s and appointments into a singular view.
+- You can add an org-file into the agenda using "~C-c [~" in the current org-file.
+- There are many views in the org-agenda, and the default is week-view.
+- You can also customize an org-agenda using ~org-agenda-custom-commands~, or use packages such ~org-super-agenda~.
+- I set up my agenda as a daily view with appointments, deadlines, and a habit tracker.
+
+#+ATTR_HTML: :width 750 :style display:inline
+#+ATTR_LATEX: :width 0.65\textwidth
+[[file:5.png]]
+
+* Org-gcal
+
+Package that syncs all your Google calendar entries with org-mode, which you can then add the org-file to the agenda.
+
+* Org-habit
+
+A package to produce a nice visual for recurring tasks, i.e. habits, that you can also have appearing in your agenda.
+
+#+ATTR_HTML: :width 750 :style display:inline
+#+ATTR_LATEX: :width 0.75\textwidth
+[[file:c:/Users/Noorah/Dropbox/orgfiles/planner.org_20200401_105921_boLAcS.png]]
+
+* ~TODO~ 's and tags
+
+#+ATTR_HTML: :style font-size:24px
+
+- These are identifiers in an org-file as tasks or reminders.
+- The types of ~TODO~ s can either be set globally in your init file, or they can be file specific.
+- They can also be placed as a subtree, or in-line (~'org-inlinetask~).
+- You can assign deadlines, scheduled date and time, active timestamps, and inactive timestamps.
+
+#+ATTR_HTML: :style font-size:24px
+- *Deadlines*: ~TODO~ must be completed at a certain date and time. Date is mandatory but time is optional.
+- *Scheduled*: Must start task on a certain date and time.
+- *Active timestamp*: Behaves like an appointment.
+- *Inactive timestamp*: shows under the task but does not appear in the agenda.
+
+* ~TODO~ 's and tags
+
+#+ATTR_HTML: :width 550 :style display:inline
+#+ATTR_LATEX: :width 0.85\textwidth
+[[file:c:/Users/Noorah/Dropbox/emacs projects/init.el_20200329_180056_xitTr0.png]]
+
+* ~TODO~ 's and tags
+
+#+ATTR_LATEX: :width 0.85\textwidth
+#+ATTR_HTML: :width 550 :style display:inline
+[[file:c:/Users/Noorah/Dropbox/emacs projects/Proposal.org_20200329_182231_vvs3sT.png]]
+
+# #+BEGIN_NOTES
+# Talk about the ~noexport~ tag
+# #+END_NOTES
+
+* Properties drawer
+#+ATTR_HTML: :style font-size:30px
+- Each org heading, also called a subtree, within an org file can have certain properties.
+  + For example, you can assign a unique ~ID~ (~org-id-get-create~) that is searchable, refiled, or hyperlinked throughout emacs, create a specific org-export filename for that subtree, or add any other configuration that is subtree specific.
+
+* Properties drawer
+
+#+ATTR_HTML: :width 500 :style display:inline
+#+ATTR_LATEX: :width 0.75\textwidth
+[[file:c:/Users/Noorah/Dropbox/emacs projects/Proposal.org_20200330_192520_cqrX8N.png]]
+
+* Properties drawer
+
+#+ATTR_HTML: :width 500 :style display:inline
+#+ATTR_LATEX: :width 0.75\textwidth
+[[file:3.png]]
+
+* Org-clock
+
+Last time we briefly talked about org-clock, which is basically clocking any of your current tasks. To invoke clocking a task requires two things:
+
+1. An org-heading.
+2. An ~:EFFORT:~ property set for a length of time.
+
+I've customized my org-clock setting such that the minute I clock into a task, it switches the state of the heading to ~STARTED~, so it can appear in my agenda.
+
+* Org-roam
+
+A note-taking package that replicates Roam Research which is based on the Zettelkasten method. I use it to build my literature review and I use ~org-roam-server~ to visualize my notes into a network.
+
+
+#+ATTR_LATEX: :width 0.65\textwidth
+[[file:7.png]]
+
+* Org-capture
+
+These are customizable org-headings that you can create on-the-go. They can be regular ~TODO~ s or just notes.
+
+#+ATTR_HTML: :width 750 :style display:inline
+#+ATTR_LATEX: :width 0.75\textwidth
+[[file:6.png]]
+
+* Org-noter
+
+- I use it to annotate PDFs and take notes within the same buffer.
+  - It uses the ~interleave~ package to locate the PDF document and ~PDF-tools~ for the annotation tools such as highlighting.
+
+#+ATTR_HTML: :width 750 :style display:inline
+#+ATTR_LATEX: :width \textwidth
+[[file:c:/Users/Noorah/Dropbox/orgfiles/Archive/Fall 2019/OB_Notes.org_20200401_124730_u6JqKp.png]]
+
+* Org-ref
+
+- I started out with ~org-ref~, and I still use some of its command especially with citation styles.
+- You can add references to your master ~.bib~ file straight into emacs and can cite references in any org file within emacs.
+- I have all my references in one bib file so I don't have to specify a bib file in each org-buffer, but it also allows other bib files as long as you invoke them within an org file.
+
+* Org-roam-bibtex
+
+Utilizes a combination of ~org-ref~, ~helm-bibtex~, and ~bibtex-completion~ to streamline note-taking workflow with references within the ~org-roam~ ecosystem.
+* Exporters
+
+#+ATTR_HTML: :style font-size:30px
+Default org-mode exporter include ~.tex~, ~.pdf~, ~.odt~, and ~.html~. Other backend org-exporters include packages such as ~ox-pandoc~, ~ox-reveal~, and ~ox-hugo~.
+
+#+ATTR_HTML: :style font-size:30px
+There are many other ox- packages but the previous three are the ones I use, especially ox-pandoc, because it exports to many other formats, such as ~.docx~ (useful to share documents with people that only work with WYSIWG text editors).
+
+* Exporters
+
+
+#+ATTR_HTML: :width 500 :style display:inline
+#+ATTR_LATEX: :width 0.65\textwidth
+[[file:4.png]]
+
+* Org-babel
+
+#+ATTR_HTML: :style font-size:30px
+This package is for code execution within org-mode files. Basically, literate programming.
+
+#+BEGIN_EXPORT html
+<p style="font-size:30px">
+I use it for <img src="Rlogo.png" alt="Rlogo.png" height="35px" valign="-20px" />, <img src="python.png" alt="python.png" height="35px" valign="-20px" />, and <img src="latex.png" alt="python.png" height="38px" valign="-28px" />.
+</p>
+#+END_EXPORT
+
+* Org-babel :noexport:
+
+#+BEGIN_SRC R :results output pdf :exports results
+1+1
+#+END_SRC
+
+#+RESULTS:
+#+begin_export latex
+[1] 2
+#+end_export
+
+* Org-babel
+
+#+ATTR_HTML: :width 750 :style display:inline
+#+ATTR_LATEX: :width 0.85\textwidth
+[[file:c:/Users/Noorah/Dropbox/emacs projects/2020-03-28-1033 Org-mode.org_20200330_210612_Sa67q6.png]]
+
+* Org-refile :noexport:
+
+A way to move org subtrees from one place to another. It can be within an org file or across org files.
+
+* Org-sidebar :noexport:
+
+Cool way of seeing all your ~TODO~ s and deadlines within an org file. Check out [[http://www.github.com/alphapapa]], the guy created so many cool org packages, so it can get overwhelming.
+
+* Org-super-agenda :noexport:
+
+Same creator of org-sidebar, but this one is like pimping your org-agenda.
