@@ -79,7 +79,7 @@ I use org files to conduct most of my literate programming and create documents 
 
 #+ATTR_HTML: :width 600
 #+ATTR_LATEX: :width 0.65\textwidth
-[[file:c:/Users/Noorah/Dropbox/emacs projects/2020-03-28-1033 Org-mode.org_20200329_164548_clXDXk.png]]
+[[file:2020-03-28-1033 Org-mode.org_20200329_164548_clXDXk.png]]
 
 * Org-agenda
 \small
@@ -104,7 +104,7 @@ A package to produce a nice visual for recurring tasks, i.e. habits, that you ca
 
 #+ATTR_HTML: :width 750 :style display:inline
 #+ATTR_LATEX: :width 0.75\textwidth
-[[file:c:/Users/Noorah/Dropbox/orgfiles/planner.org_20200401_105921_boLAcS.png]]
+[[file:planner.org_20200401_105921_boLAcS.png]]
 
 * ~TODO~ 's and tags
 
@@ -125,13 +125,13 @@ A package to produce a nice visual for recurring tasks, i.e. habits, that you ca
 
 #+ATTR_HTML: :width 550 :style display:inline
 #+ATTR_LATEX: :width 0.85\textwidth
-[[file:c:/Users/Noorah/Dropbox/emacs projects/init.el_20200329_180056_xitTr0.png]]
+[[file:init.el_20200329_180056_xitTr0.png]]
 
 * ~TODO~ 's and tags
 
 #+ATTR_LATEX: :width 0.85\textwidth
 #+ATTR_HTML: :width 550 :style display:inline
-[[file:c:/Users/Noorah/Dropbox/emacs projects/Proposal.org_20200329_182231_vvs3sT.png]]
+[[file:Proposal.org_20200329_182231_vvs3sT.png]]
 
 # #+BEGIN_NOTES
 # Talk about the ~noexport~ tag
@@ -146,7 +146,7 @@ A package to produce a nice visual for recurring tasks, i.e. habits, that you ca
 
 #+ATTR_HTML: :width 500 :style display:inline
 #+ATTR_LATEX: :width 0.75\textwidth
-[[file:c:/Users/Noorah/Dropbox/emacs projects/Proposal.org_20200330_192520_cqrX8N.png]]
+[[file:Proposal.org_20200330_192520_cqrX8N.png]]
 
 * Properties drawer
 
@@ -186,7 +186,7 @@ These are customizable org-headings that you can create on-the-go. They can be r
 
 #+ATTR_HTML: :width 750 :style display:inline
 #+ATTR_LATEX: :width \textwidth
-[[file:c:/Users/Noorah/Dropbox/orgfiles/Archive/Fall 2019/OB_Notes.org_20200401_124730_u6JqKp.png]]
+[[file:OB_Notes.org_20200401_124730_u6JqKp.png]]
 
 * Org-ref
 
@@ -238,7 +238,7 @@ I use it for <img src="Rlogo.png" alt="Rlogo.png" height="35px" valign="-20px" /
 
 #+ATTR_HTML: :width 750 :style display:inline
 #+ATTR_LATEX: :width 0.85\textwidth
-[[file:c:/Users/Noorah/Dropbox/emacs projects/2020-03-28-1033 Org-mode.org_20200330_210612_Sa67q6.png]]
+[[file:2020-03-28-1033 Org-mode.org_20200330_210612_Sa67q6.png]]
 
 * Org-refile :noexport:
 
